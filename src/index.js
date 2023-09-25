@@ -2,7 +2,7 @@ import Controller from "./mvc/Controller";
 import Model from "./mvc/Model";
 import View from "./mvc/View";
 
-import "./styles.css";
+import "./styles/styles.css";
 
 const initialize = () => {
   const controller = new Controller(new Model(), new View());
