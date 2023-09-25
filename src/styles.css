@@ -1,0 +1,217 @@
+@import url(https://fonts.googleapis.com/css?family=Belleza:regular);
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: Belleza, sans-serif;
+}
+::selection {
+  background-color: rgba(85, 107, 47, 0.2);
+}
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(85, 107, 47, 0.06);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darkolivegreen;
+  border-radius: 3px;
+}
+body {
+  width: 100%;
+  height: 100vh;
+
+  .header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    color: white;
+    background-color: darkolivegreen;
+    border-bottom: 1px solid darkolivegreen;
+    letter-spacing: 1px;
+    box-shadow: 0px 1px 13px -1px #000000ce;
+
+    .header-button {
+      width: 100px;
+      height: 40px;
+      border: 2px solid white;
+      border-radius: 5px;
+      color: white;
+      background-color: transparent;
+      outline: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+    .header-button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .posts {
+    width: 100%;
+    padding: 40px 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    justify-content: space-between;
+    gap: 15px;
+
+    .post-card {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 25px 35px;
+      border: 1px solid darkolivegreen;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+
+      .post-title {
+        text-transform: capitalize;
+        border-bottom: 1px solid rgba(85, 107, 47, 0.5);
+        padding-bottom: 10px;
+      }
+      .post-body {
+        text-transform: uppercase;
+      }
+    }
+    .post-card:hover {
+      background-color: rgba(85, 107, 47, 0.084);
+    }
+  }
+
+  .post-info {
+    width: 100%;
+    padding: 40px 100px;
+
+    .post-title {
+      text-align: center;
+      text-transform: capitalize;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(85, 107, 47, 0.5);
+    }
+
+    .post-body {
+      text-transform: uppercase;
+      margin: 40px;
+    }
+
+    .post-comments {
+      width: 100%;
+      height: 200px;
+      overflow-y: scroll;
+      padding: 10px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .comment {
+        background-color: rgba(85, 107, 47, 0.06);
+        border-radius: 4px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .comment-user {
+          text-transform: uppercase;
+        }
+
+        .comment-email {
+          text-transform: lowercase;
+          margin-left: 5px;
+        }
+
+        .comment-body {
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .create-post {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+
+    .create-post-form {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 1.2rem;
+      color: darkolivegreen;
+
+      #create-post-title,
+      #create-post-body {
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        padding: 10px;
+        outline: none;
+        border: 1px solid darkolivegreen;
+        border-radius: 4px;
+      }
+
+      #create-post-title {
+        height: 40px;
+      }
+
+      #create-post-body {
+        max-width: 100%;
+        min-height: 100px;
+        height: 200px;
+      }
+
+      .btn-group {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        gap: 15px;
+
+        .body-button {
+          width: 20%;
+          height: 40px;
+          border: 1px solid darkolivegreen;
+          border-radius: 4px;
+          outline: none;
+          background-color: white;
+          color: darkolivegreen;
+          font-size: 1.2rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .error-page {
+    margin-top: 40px;
+    font-size: 2rem;
+    text-align: center;
+    color: darkolivegreen;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header,
+  .posts {
+    padding: 20px 40px;
+  }
+}
